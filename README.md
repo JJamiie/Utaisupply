@@ -1,5 +1,5 @@
-# www.utaisupply.com
-## บริษัทอุทัยซัพพลายจำกัด
+# บริษัทอุทัยซัพพลายจำกัด
+## www.utaisupply.com
 
 ### เกี่ยวกับเรา
 
@@ -8,8 +8,8 @@
 ### เครื่องมือพัฒนา
 
 ```
-Node express , Vue , MongoDB
+Node express , Vue and MongoDB
 ```
 
-## License
+## Develop
 This project is developed by **Kuladech Rashataprucksa.**  Tel. 0864151954

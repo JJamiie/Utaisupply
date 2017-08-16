@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    title Utaisupply
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel="icon", type='image/png' href="/images/ic_utaisupply.png" sizes='32*32')
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900")
+    link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css")
+    link(rel='stylesheet', href='/stylesheets/css/style.css')
+    link(rel='stylesheet', href='/stylesheets/css/login.css')
+    script(src='/javascripts/jquery-3.2.1.min.js')  
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+
+  body
+    .content.primary-color
+      .main-login
+        h4.title-utai.is-1.text-is-white.has-text-centered Utai Supply
+        .card
+          if message.length > 0
+            .notification.is-warning
+              button#btn-close-message.delete
+              | #{message}
+          p.has-text-centered เข้าสู่ระบบ
+          form(method="post" action="/ut-admin/login")
+            .field
+              p.control.has-icons-left.has-icons-right
+                input.input(type="text" placeholder="Username" name="username" required)
+                span.icon.is-small.is-left
+                  i.fa.fa-user
+                span.icon.is-small.is-right
+                  i.fa.fa-check
+            .field
+              p.control.has-icons-left
+                input.input(type="password" placeholder="Password" name="password" required)
+                span.icon.is-small.is-left
+                  i.fa.fa-lock
+            .field
+              p.control
+                button#btn-login(type="submit" value="Log In").button.is-success.is-fullwidth เข้าสู่ระบบ
+    script(src='/javascripts/login.js')    

@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title Utaisupply - Admin
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel="icon", type='image/png' href="/images/ic_utaisupply.png" sizes='32*32')
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css")
+    link(rel='stylesheet', href='/stylesheets/css/style.css')
+    script(src='/javascripts/jquery-3.2.1.min.js')  
+    script(src='/javascripts/main.js')  
+
+  body
+    nav.navbar.primary-color.nav-top
+      .navbar-brand
+        a.navbar-item
+          img(src="/images/logo.png",alt="Utai Supply")
+        .navbar-burger.primary-color(data-target="navMenu")
+          span.white-color
+          span.white-color
+          span.white-color
+      #navMenu.navbar-menu.primary-color
+        .navbar-end
+          a.nav-item.is-hoverable.text-is-white(href="/portfolio") ตั้งค่าผลงาน
+          a.nav-item.is-hoverable.text-is-white(href="/ut-admin/logout") ออกจากระบบ

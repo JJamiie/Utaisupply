@@ -1,0 +1,49 @@
+extends layout
+block title
+  title Utaisupply - Contact
+block head
+  link(rel='stylesheet', href='/stylesheets/css/contact.css')
+block content
+  section.hero.is-fullheight.content-parallax
+    .parallax-container
+      .parallax
+        img(src="/images/contact.jpg")
+    .hero-body
+      .container.has-text-centered
+        h3.title.is-1.text-color-white <strong>ติดต่อเรา</strong>
+        h4.subtitle.is-5.text-color-white เปิดบริการ วันจันทร์ - เสาร์ เวลา 8.00 น. ถึง 17.00 น. 
+  section.content-contact-main
+    .hero.container
+      .card
+        .hero-body
+          .columns
+            .column
+              #map
+            .column.contact-info
+              .columns
+                .column.is-narrow.content
+                  i.fa.fa-map-marker.fa-lg
+                .column.content
+                  p 18/1 หมู่ 11 ตำบลหนองอ้อ อำเภอบ้านโป่ง จังหวัดราชบุรี 70110 
+              .columns
+                .column.is-narrow.content
+                  i.fa.fa-phone.fa-lg
+                .column.content
+                  p (66) 32 353 887
+              .columns
+                .column.is-narrow.content
+                  i.fa.fa-mobile.fa-2x
+                .column.content
+                  p (66) 97 269 6441, (66) 97 267 5704
+              .columns
+                .column.is-narrow.content
+                  i.fa.fa-fax.fa-lg
+                .column.content
+                  p (66) 32 353 359 
+              .columns
+                .column.is-narrow.has-text-centered
+                  i.fa.fa-envelope.fa-lg
+                .column.content
+                  p utaisupply@hotmail.com, utaisupply@gmail.com
+  script(src='/javascripts/contact.js')  
+  script(async, defer, src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFqd7t73IqVTF2oyQ6wLV6B2zqjKOo0so&callback=initMap")

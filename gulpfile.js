@@ -10,7 +10,7 @@ var browserSync = require('browser-sync').create();
 gulp.task('nodemon', function(cb) {
   var called = false;
   return nodemon({
-      script: './bin/www'
+      script: './server/index'
     })
     .on('start', function onStart() {
       // ensure start only got called once
@@ -39,17 +39,17 @@ gulp.task('styles', function() {
 
 gulp.task('browser-sync', ['nodemon'], function() {
   browserSync.init( {
-    proxy: 'http://localhost:3000',
+    proxy: 'http://localhost:4000',
     port: 5000,
     browser: "google chrome"
   });
 });
 
 gulp.task('default', ['browser-sync'], function() {
-  gulp.watch('./public/stylesheets/scss/**/*.scss', ['styles']);
-  gulp.watch("./public/stylesheets/scss/**/*.scss").on('change', browserSync.reload);
-  gulp.watch("./public/stylesheets/javascripts/**/*.js").on('change', browserSync.reload);
-  gulp.watch("./views/**/*.pug").on('change', browserSync.reload);
-  gulp.watch("./routes/**/*.js").on('change', browserSync.reload);
-  gulp.watch("./models/**/*.js").on('change', browserSync.reload);
+  gulp.watch('./server/public/stylesheets/scss/**/*.scss', ['styles']);
+  gulp.watch("./server/public/stylesheets/scss/**/*.scss").on('change', browserSync.reload);
+  gulp.watch("./server/public/stylesheets/javascripts/**/*.js").on('change', browserSync.reload);
+  gulp.watch("./server/views/**/*.pug").on('change', browserSync.reload);
+  gulp.watch("./server/routes/**/*.js").on('change', browserSync.reload);
+  gulp.watch("./server/models/**/*.js").on('change', browserSync.reload);
 });

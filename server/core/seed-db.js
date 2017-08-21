@@ -1,6 +1,7 @@
 "use strict";
 var User = require("../models/user");
 module.exports = function() {
+  // Create admin
   User.findOne(
     {
       username: "utaisupply"

@@ -1,0 +1,21 @@
+$primary_color: #0a183a;
+$primary_color_light_1: #162854;
+.primary-color {
+    background-color: $primary_color !important;
+}
+
+.text-is-primary {
+    color: $primary_color !important;
+}
+
+.white-color {
+    background-color: white !important;
+}
+
+.text-is-white {
+    color: white !important;
+}
+
+.text-color-white {
+    color: #FFFFFF !important;
+}

@@ -1,73 +1,16 @@
-@import "fontawesome/font-awesome";
+
 @import "variables/color";
 @import "variables/font_style";
-@import "../lib/slick/slick-theme.css";
-@import "../lib/slick/slick.css";
+@import "lib/animate.css";
+@import "lib/loading.css";
+@import "../../node_modules/bulma/sass/utilities/initial-variables.sass";
+// // Init color
+$primary: #0a183a;
+@import "../../node_modules/bulma/bulma.sass";
 
 body {
-  font-family: 'Kanit', sans-serif !important;
+  font-family: 'Fira Sans', 'Kanit', sans-serif !important;
 }
-
-.is-hoverable:hover {
-  background-color: rgba(0, 0, 0, 0.3) !important;
-}
-
-.title{
-  letter-spacing: 3px;
-}
-
-.subtitle {
-  margin-top: -1rem !important;
-}
-
-.line {
-  background: black;
-  width: 50px;
-  height: 3.5px;
-  margin: 0 auto 20px;
-}
-
-.content-parallax {
-  min-height: 400px !important;
-}
-
-.parallax-container {
-  position: absolute;
-  overflow: hidden;
-  width: 100%;
-  height: 400px;
-
-  .parallax {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    img {
-      display: none;
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
-    }
-  }
-}
-
-.is-text-header {
-  @media(min-width: 768px) {
-    font-size: 4.5rem!important;
-  }
-  font-size: 3.0rem!important;
-  margin-bottom: 40px !important;
-}
-
 
 .noselect {
   cursor: default;
@@ -79,3 +22,106 @@ body {
   user-select: none;
 }
 
+
+// New
+
+.j-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.j-center-vertical {
+  top: 50%;
+  transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  position: absolute;
+}
+
+.j-center-horizontal {
+  left: 50%;
+  transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  position: absolute;
+}
+
+@-webkit-keyframes rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes rotationCounterClockwise {
+  from {
+      -webkit-transform: rotate(360deg);
+  }
+  to {
+      -webkit-transform: rotate(1deg);
+  }
+}
+
+@keyframes blinker {
+  50% {
+      opacity: 0;
+  }
+}
+
+// Overwrite datapicker color
+.vdp-datepicker input,
+.display-time {
+  -webkit-appearance: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.25em;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  line-height: 1.5;
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: calc(0.625em - 1px);
+  padding-right: calc(0.625em - 1px);
+  padding-top: calc(0.375em - 1px);
+  position: relative;
+  vertical-align: top;
+  background-color: #FFFFFF;
+  border-color: #dbdbdb;
+  color: #363636;
+  -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  max-width: 100%;
+  width: 100%;
+}
+
+.underline {
+  width: 100%;
+  background-color: #f2f2f2;
+  height: 1px;
+  margin: 25px 0px 20px 0px;
+}
+
+.j-grow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.j-full-screen {
+  width: 100vw;
+  height: 100vh;
+}

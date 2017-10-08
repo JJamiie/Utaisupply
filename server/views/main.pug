@@ -1,9 +1,21 @@
 extends layout
+block styles
+  //- link(rel='stylesheet', href='/app/styles/frontend.css')
+  //- link(rel='stylesheet', href='/app/styles/app.css')
+
 block content
   #app
+    .j-full-screen.is-blue
+      .load-content.j-center.has-text-centered
+        h4.title.is-text-white.is-size-1.is-font-condense(style="letter-spacing: 5px;") UTAI SUPPLY
+        h5.subtitle.is-text-white.is-size-5.is-size-6-mobile.is-font-thin(style="letter-spacing: 3px;")  Innovation Vision
+        .spinner
+          .bounce1
+          .bounce2
+          .bounce3
+
 block scripts
   script(src='/app/vendor.js')
-  script(src='/app/frontend.js')
+  script(src='/app/frontend.js') 
   script(src='/app/app.js')
 
-  

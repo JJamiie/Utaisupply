@@ -1,35 +1,38 @@
-.font-is-ultra-light {
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,500,600,700,800,900|Kanit:100,200,300,400,500,600,700,800,900);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+.is-font-ultra-light {
     font-weight: 100 !important;
 }
 
-.font-is-light {
+.is-font-light {
     font-weight: 200 !important;
 }
 
-.font-is-thin {
+.is-font-thin {
     font-weight: 300 !important;
 }
 
-.font-is-regular {
+.is-font-regular {
     font-weight: 400 !important;
 }
 
-.font-is-medium {
+.is-font-medium {
     font-weight: 500 !important;
 }
 
-.font-is-semi-bold {
+.is-font-semi-bold {
     font-weight: 600 !important;
 }
 
-.font-is-bold {
+.is-font-bold {
     font-weight: 700 !important;
 }
 
-.font-is-condense {
+.is-font-condense {
     font-weight: 800 !important;
 }
 
-.font-is-ultra-condense {
+.is-font-ultra-condense {
     font-weight: 900 !important;
 }

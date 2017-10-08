@@ -22,11 +22,12 @@ module.exports = {
 			"apollo-client",
 			"graphql-tag",
 			"i18next",
-			"slick-carousel",
-			"./client/lib/pallarax.js"
 		],
 		app: [
-			"./client/app/main.js"
+			"./client/app/utaisupply/main.js"
+		],
+		admin: [
+			"./client/app/admin/main.js"
 		],
 		frontend: [
 			"./client/frontend/main.js",

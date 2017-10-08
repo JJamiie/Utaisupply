@@ -1,40 +1,83 @@
-doctype html
-html
-  head
-    title Utaisupply
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(rel="icon", type='image/png' href="/images/ic_utaisupply.png" sizes='32*32')
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900")
-    link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css")
-    link(rel='stylesheet', href='/stylesheets/css/style.css')
-    link(rel='stylesheet', href='/stylesheets/css/login.css')
-    script(src='/javascripts/jquery-3.2.1.min.js')  
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+extend ../layout
+block styles
+    link(rel='stylesheet', href='/app/styles/frontend.css')
+    style.
+        .login-container{
+            width: 100vw;
+            height: 100vh;
+        }
+        .main-login{
+            min-width: 400px !important;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%); 
+            -webkit-transform: translate(-50%,-50%); 
+            position: absolute;
+        }
+        .welcome{
+            margin-bottom: 20px;
+        }
+        .title{
+            margin-bottom: 50px !important;
+        }
+        .btn-login{
+            margin-top: 20px;
+            background-color: #f6758f !important;
+        }
+        .input{
+            color: white !important;
+            border-color: transparent !important;
+            background-color: #41b2eb !important;
+            -webkit-box-shadow: none !important;
+            box-shadow:  none !important;
+            margin-bottom: 10px;
+        }
+        
+        .input::-webkit-input-placeholder {
+            color: #f5f5f5;
+        }
+        .input:-moz-placeholder {
+            color: #f5f5f5;
+        }
+        .input::-moz-placeholder {
+            color: #f5f5f5;
+        }
+        .inputs:-ms-input-placeholder {
+            color: #f5f5f5;
+        }
+        .icon{
+            color: white !important;
+        }
 
-  body
-    .content.primary-color
-      .main-login
-        h4.title-utai.is-1.text-is-white.has-text-centered Utai Supply
-        .card
-          if message.length > 0
-            .notification.is-warning
-              button#btn-close-message.delete
-              | #{message}
-          p.has-text-centered เข้าสู่ระบบ
-          form(method="post" action="/ut-admin/login")
-            .field
-              p.control.has-icons-left.has-icons-right
-                input.input(type="text" placeholder="Username" name="username" required)
-                span.icon.is-small.is-left
-                  i.fa.fa-user
-                span.icon.is-small.is-right
-                  i.fa.fa-check
-            .field
-              p.control.has-icons-left
-                input.input(type="password" placeholder="Password" name="password" required)
-                span.icon.is-small.is-left
-                  i.fa.fa-lock
-            .field
-              p.control
-                button#btn-login(type="submit" value="Log In").button.is-success.is-fullwidth เข้าสู่ระบบ
-    script(src='/javascripts/login.js')    
+block content 
+    .login-container.is-blue
+        .main-login
+            h4.title.is-size-2.has-text-centered.is-text-white UTAI SUPPLY
+            h5.welcome.is-size-5.is-text-white 
+                span.is-font-bold.is-size-4 Welcome.
+                |  Please login.
+
+            if message.length > 0
+              .notification.is-warning
+                | #{message}
+            form(method="post" action="/admin/login")
+              .field
+                p.control.has-icons-left.has-icons-right
+                  input.input.is-medium(type="text" placeholder="Username" name="username" required)
+                  span.icon.is-small.is-left
+                    i.fa.fa-user
+                  span.icon.is-small.is-right
+                    i.fa.fa-check
+              .field
+                p.control.has-icons-left
+                  input.input.is-medium(type="password" placeholder="Password" name="password" required)
+                  span.icon.is-small.is-left
+                    i.fa.fa-lock
+              .field
+                p.control
+                  button.btn-login.is-medium(type="submit" value="Log In").button.is-primary.is-fullwidth Login
+block scripts
+    script(src='/app/frontend.js')
+    
+    

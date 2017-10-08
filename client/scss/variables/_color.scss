@@ -1,21 +1,61 @@
-$primary_color: #0a183a;
-$primary_color_light_1: #162854;
-.primary-color {
-    background-color: $primary_color !important;
+$blue: #12244E;
+$blue1: #162854;
+$grey: #555555;
+$grey1: #39424e;
+$grey2: #404a57;
+$grey_light: #fdfdfd;
+
+.is-blue {
+    background-color: $blue !important;
 }
 
-.text-is-primary {
-    color: $primary_color !important;
+.is-text-blue {
+    color: $blue !important;
 }
 
-.white-color {
+.is-blue1 {
+    background-color: $blue1 !important;
+}
+
+.is-text-blue1 {
+    color: $blue1 !important;
+}
+
+.is-white {
     background-color: white !important;
 }
 
-.text-is-white {
+.is-text-white {
     color: white !important;
 }
 
-.text-color-white {
-    color: #FFFFFF !important;
+.is-grey-light {
+    background-color: $grey_light !important;
+}
+
+.is-text-grey-light {
+    color: $grey_light !important;
+}
+.is-grey {
+    background-color: $grey !important;
+}
+
+.is-text-grey {
+    color: $grey !important;
+}
+
+.is-grey1 {
+    background-color: $grey1 !important;
+}
+
+.is-text-grey1 {
+    color: $grey1 !important;
+}
+
+.is-grey2 {
+    background-color: $grey2 !important;
+}
+
+.is-text-grey2 {
+    color: $grey2 !important;
 }

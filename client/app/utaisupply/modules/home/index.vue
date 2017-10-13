@@ -65,14 +65,19 @@ export default {
 }
 
 .content-home-footer {
+  position: relative;
+  overflow: hidden;
+  @media screen and (min-width: 769px) {
+    min-height: 500px;
+  }
+  min-height: 300px;
   img {
     width: 100%;
-    object-fit: cover;
-    @media screen and (max-width: 768px) {
-       max-height: 300px;
-       width: auto;
-       height: 100%;
+    position: absolute;
+    @media screen and (min-width: 769px) {
+      top: -200px;
     }
+    filter: brightness(0.9);
   }
 }
 </style>

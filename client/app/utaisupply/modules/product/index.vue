@@ -1,11 +1,14 @@
 <template lang="pug">
 div
+    section.hero.is-medium.header-product
+        .hero-body
+            img(src="~images/product.jpg" v-parallax="0.2")
+            .container.has-text-centered
+                h3.title.is-size-1.is-text-white <strong>สินค้า</strong>
+                h4.subtitle.is-size-5.is-text-white ด้วยความใส่ใจในราคามิตรภาพ
     section.hero.content-product-main
         .hero-body
             .container
-                .has-text-centered
-                    h3.title.is-size-1.is-text-blue <strong>สินค้า</strong>
-                    h4.subtitle.is-size-5.is-text-blue ด้วยความใส่ใจในราคามิตรภาพ
                 .columns.products
                     .column#stainless
                         .container-img
@@ -50,8 +53,6 @@ div
 
 <script>
     import ModalProduct from "./components/ModalProduct";
-
-    
     export default {
         components: {
             ModalProduct
@@ -66,9 +67,19 @@ div
 </script>
 
 <style lang="scss" scoped>
-    .content-product-header {
-        .hero-body {
-            padding-bottom: 0;
+    .header-product {
+        position: relative;
+        overflow: hidden;
+        img {
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            left: 0px;
+            top: -150px;
+            @media screen and (max-width: 768px) {
+                top:-100px;
+            }
+            filter: brightness(0.7);
         }
     }
     
@@ -81,9 +92,6 @@ div
             @media(min-width: 1179px) {
                 width: 60%;
             }
-        }
-        .products {
-            margin-top: 20px;
         }
         .container-img {
             cursor: pointer;

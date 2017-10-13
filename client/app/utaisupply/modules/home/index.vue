@@ -24,7 +24,6 @@ div
 </template>
 
 <script>
-import anime from 'animejs'
 import { Carousel, Slide } from 'vue-carousel';
 export default {
   components: {
@@ -35,7 +34,7 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .content-home-header {
   .hero-body {
     position: relative;
@@ -44,21 +43,9 @@ export default {
       height: 100%;
       top: 0;
       left: 0;
-      .VueCarousel-slide{
-        img{
+      .VueCarousel-slide {
+        img {
           filter: brightness(0.7);
-        }
-      }
-      .VueCarousel-navigation {
-        .VueCarousel-navigation-button {
-          color: rgba(255, 255, 255, 0.71);
-          font-size: 1.5rem;
-        }
-        .VueCarousel-navigation-prev {
-          margin-left: 48px;
-        }
-        .VueCarousel-navigation-next {
-          margin-right: 48px;
         }
       }
     }
@@ -76,11 +63,16 @@ export default {
     }
   }
 }
-.content-home-footer{
-  img{
-    max-height: 500px;
+
+.content-home-footer {
+  img {
     width: 100%;
     object-fit: cover;
+    @media screen and (max-width: 768px) {
+       max-height: 300px;
+       width: auto;
+       height: 100%;
+    }
   }
 }
 </style>

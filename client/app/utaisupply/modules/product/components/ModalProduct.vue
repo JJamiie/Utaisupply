@@ -23,20 +23,6 @@ export default {
         return {};
     },
     computed: {
-        getTitleProduct: function() {
-            if (this.$i18n.locale == 'en') {
-                return this.initialProduct.translations.find(obj => obj.language === "en").title;
-            } else if (this.$i18n.locale == 'th') {
-                return this.initialProduct.translations.find(obj => obj.language === "th").title;
-            }
-        },
-        getDescProduct: function() {
-            if (this.$i18n.locale == 'en') {
-                return this.initialProduct.translations.find(obj => obj.language === "en").detail;
-            } else if (this.$i18n.locale == 'th') {
-                return this.initialProduct.translations.find(obj => obj.language === "th").detail;
-            }
-        }
     }
 }
 </script>

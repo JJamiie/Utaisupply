@@ -82,21 +82,20 @@ export default {
             height: 25px;
             margin-right: 10px;
         }
-        .flag-title{
+        .flag-title {
             color: white;
         }
         .navbar-link {
             cursor: pointer;
             display: inline-flex !important;
         }
-        .level-item{
-            @media screen and (max-width: 768px){
-                p{
+        .level-item {
+            @media screen and (max-width: 768px) {
+                p {
                     color:white;
                 }
             }
         }
-        
     }
 }
 </style>

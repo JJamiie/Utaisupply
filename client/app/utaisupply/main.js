@@ -42,6 +42,9 @@ Vue.use(VueGoogleMaps, {
     }
 });
 
+import VueScrollTo from 'vue-scrollto';
+Vue.use(VueScrollTo);
+
 const i18n = new VueI18n({
   locale: "th",
   fallbackLocale: "th",

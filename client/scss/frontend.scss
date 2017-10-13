@@ -1,4 +1,3 @@
-
 @import "variables/color";
 @import "variables/font_style";
 @import "lib/animate.css";
@@ -124,4 +123,17 @@ body {
 .j-full-screen {
   width: 100vw;
   height: 100vh;
+}
+
+.VueCarousel-navigation {
+  .VueCarousel-navigation-button {
+    color: rgba(255, 255, 255, 0.71) !important;
+    font-size: 1.5rem;
+  }
+  .VueCarousel-navigation-prev {
+    margin-left: 48px;
+  }
+  .VueCarousel-navigation-next {
+    margin-right: 48px;
+  }
 }

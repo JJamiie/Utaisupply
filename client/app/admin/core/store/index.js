@@ -1,8 +1,7 @@
 const state = {
   languages: [
     { name: "Thai", abbr: "th" },
-    { name: "English", abbr: "en" },
-    { name: "Japanese", abbr: "ja" }
+    { name: "English", abbr: "en" }
   ]
 };
 

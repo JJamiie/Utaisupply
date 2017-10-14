@@ -13,7 +13,7 @@
 <script>
     export default {
         props: {
-            initialProduct:{
+            initialPortfolio:{
                 type: Object
             },
             index: {
@@ -23,14 +23,14 @@
         },
         data: function() {
             return {
-                title: this.initialProduct.title,
-                detail: this.initialProduct.detail,
+                title: this.initialPortfolio.title,
+                detail: this.initialPortfolio.detail,
             };
         },
         methods: {
             update: function(event) {
                 var translation = {};
-                translation['language'] = this.initialProduct.language;
+                translation['language'] = this.initialPortfolio.language;
                 translation['title'] = this.title;
                 translation['detail'] = this.detail;
                 this.$emit('update-value', this.index, translation);

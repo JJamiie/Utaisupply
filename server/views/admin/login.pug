@@ -23,32 +23,8 @@ block styles
         }
         .btn-login{
             margin-top: 20px;
-            background-color: #f6758f !important;
-        }
-        .input{
-            color: white !important;
-            border-color: transparent !important;
-            background-color: #41b2eb !important;
-            -webkit-box-shadow: none !important;
-            box-shadow:  none !important;
-            margin-bottom: 10px;
         }
         
-        .input::-webkit-input-placeholder {
-            color: #f5f5f5;
-        }
-        .input:-moz-placeholder {
-            color: #f5f5f5;
-        }
-        .input::-moz-placeholder {
-            color: #f5f5f5;
-        }
-        .inputs:-ms-input-placeholder {
-            color: #f5f5f5;
-        }
-        .icon{
-            color: white !important;
-        }
 
 block content 
     .login-container.is-blue
@@ -76,7 +52,7 @@ block content
                     i.fa.fa-lock
               .field
                 p.control
-                  button.btn-login.is-medium(type="submit" value="Log In").button.is-primary.is-fullwidth Login
+                  button.btn-login.is-medium.is-warning(type="submit" value="Log In").button.is-primary.is-fullwidth Login
 block scripts
     script(src='/app/frontend.js')
     

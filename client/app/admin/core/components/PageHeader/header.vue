@@ -2,33 +2,22 @@
 div
     nav.navbar.nav-top.is-blue
         .container
-            .navbar-brand
-                .navbar-burger(data-target="navMenu")
-                    span.is-white
-                    span.is-white
-                    span.is-white
-            #navMenu.navbar-menu
-                .navbar-end
-                    a.navbar-item.is-hoverable.is-text-white(href="/admin/logout") Logout
+            .navbar-end
+                a.navbar-item.is-hoverable.is-text-white(href="/admin/logout") Logout
     section.hero.is-info 
         .hero-body
             .container
                 .title Settings
-                .subtitle Everything you need CMIC website to be
+                .subtitle Everything you need Utaisupply website to be
         .hero-foot
             nav.tabs
                 .container
                     ul
                         router-link(tag="li" , to="/") 
                             a Home
-                        router-link(tag="li" , to="/inventor") 
-                            a Inventor
-                        router-link(tag="li" , to="/product") 
-                            a Products
-                        router-link(tag="li" , to="/news") 
-                            a News
-                        router-link(tag="li" , to="/event") 
-                            a Events
+                        router-link(tag="li" , to="/Portfolio") 
+                            a Portfolio
+                       
    
 </section>  
 </template>

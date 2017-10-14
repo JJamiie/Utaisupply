@@ -26,11 +26,10 @@ let crossdomain = require("helmet-crossdomain");
 let mongoose = require("mongoose");
 let MongoStore = require("connect-mongo")(session);
 
-let i18next = require("i18next");
-let i18nextExpress = require("i18next-express-middleware");
-let i18nextFs = require("i18next-node-fs-backend");
-
 let serverFolder = path.normalize(path.join(config.rootPath, "server"));
+let dataFolder = path.normalize(path.join(config.rootPath, "data"));
+
+let fileUpload = require("express-fileupload");
 
 function initMiddleware(app) {
   app.use(
@@ -47,15 +46,12 @@ function initMiddleware(app) {
   app.set("port", config.port);
 
   // Request body parsing middleware should be above methodOverride
-  app.use(
-    bodyParser.urlencoded({
-      extended: true,
-      limit: config.contentMaxLength * 2
-    })
-  );
-  app.use(validator());
+  app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
+
+  app.use(validator());
   app.use(methodOverride());
+  app.use(fileUpload());
 
   if (config.isProductionMode()) {
     // HTTP/2 Server Push support
@@ -67,9 +63,10 @@ function initMiddleware(app) {
       })
     );
     // Setting up static folder
+    app.use(express["static"](path.join(serverFolder, "public")));
   }
-
-  app.use(express["static"](path.join(serverFolder, "public")));
+  app.use(express["static"](path.join(serverFolder, "public/images")));
+  app.use(express["static"](path.join(dataFolder)));
 
   // Cookie parser should be above session
   app.use(cookieParser());
@@ -147,16 +144,16 @@ function initWebpack(app) {
     let wpConfig = require("../../build/webpack.dev.config");
 
     let compiler = webpack(wpConfig);
-    let devMiddleware = require("webpack-dev-middleware")(compiler,{
+    let devMiddleware = require("webpack-dev-middleware")(compiler, {
       noInfo: true,
       publicPath: wpConfig.output.publicPath,
       headers: { "Access-Control-Allow-Origin": "*" },
       //stats: 'errors-only'
       stats: { colors: true }
-    }); 
-    let hotMiddleware = require("webpack-hot-middleware")(compiler,{
+    });
+    let hotMiddleware = require("webpack-hot-middleware")(compiler, {
       log: logger.info
-    }); 
+    });
     app.use(devMiddleware);
     app.use(hotMiddleware);
   }
@@ -200,7 +197,8 @@ function onError(error) {
   if (error.syscall !== "listen") {
     throw error;
   }
-  let bind = typeof port === "string" ? "Pipe " + config.port : "Port " + config.port;
+  let bind =
+    typeof port === "string" ? "Pipe " + config.port : "Port " + config.port;
   switch (error.code) {
     case "EACCES":
       console.error(bind + " requires elevated privileges");

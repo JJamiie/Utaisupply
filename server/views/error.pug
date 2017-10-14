@@ -1,6 +1,37 @@
 extends layout
+block title
+	title Utai supply - Page Not Found
+block styles
+	link(rel='stylesheet', href='/app/styles/frontend.css')
+	style.
+		.error{
+			width: 100vw;
+			height: 100vh;
+		}
+		@media screen and (min-width: 769px) {
+			.container-error{
+				width: 40%;
+			}
+		}
+		@media screen and (max-width: 768px) {
+			.container-error{
+				width: 90%;
+			}
+		}
+		.line {
+			width: 20px;
+			background-color: #FFFFFF;
+			height: 4px;
+			margin: 5px 0px;
+		}
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+	.error.is-blue
+		.container-error.j-center
+			h1.is-text-white= 'ERROR ' +  error.message
+			.line
+			h2.is-text-white.is-size-1-desktop.is-size-2-touch ooops, Something </br> went wrong
+
+block scripts
+	script(src='/app/frontend.js') 
+

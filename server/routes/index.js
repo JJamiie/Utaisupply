@@ -3,9 +3,12 @@ module.exports = function(app, db, passport) {
     res.render("main", {});
   });
 
+  let restApiRoute = require("./restapi/index.route")(passport);
+  app.use('/api', restApiRoute);
+
   // Handle Admin check routes
-  require("./admin")(app, db, passport);
+  require("./admin")(app, passport);
 
   // Handle errors
-  require("./errors")(app, db, passport);
+  require("./errors")(app);
 };

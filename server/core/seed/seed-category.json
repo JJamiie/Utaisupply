@@ -1,0 +1,47 @@
+[
+  {
+    "translations": [
+      {
+        "language": "th",
+        "name": "ตัดเลเซอร์"
+      }
+    ],
+    "type": 0
+  },
+  {
+    "translations": [
+      {
+        "language": "th",
+        "name": "ตัดพลาสม่า"
+      }
+    ],
+    "type": 1
+  },
+  {
+    "translations": [
+      {
+        "language": "th",
+        "name": "ตัดเหล็ก"
+      }
+    ],
+    "type": 2
+  },
+  {
+    "translations": [
+      {
+        "language": "th",
+        "name": "พับ"
+      }
+    ],
+    "type": 3
+  },
+  {
+    "translations": [
+      {
+        "language": "th",
+        "name": "ม้วน"
+      }
+    ],
+    "type": 4
+  }
+]

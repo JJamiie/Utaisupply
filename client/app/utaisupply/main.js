@@ -22,9 +22,6 @@ import VuePreventParentScroll from "vue-prevent-parent-scroll";
 
 Vue.use(VuePreventParentScroll);
 
-import VueParallaxJs from 'vue-parallax-js';
-Vue.use(VueParallaxJs);
-
 import Footer from "./core/components/PageFooter/footer";
 const PageFooter = {
   install(Vue, options) {

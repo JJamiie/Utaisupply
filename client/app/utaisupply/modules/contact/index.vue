@@ -1,11 +1,11 @@
 <template lang="pug">
     div
-        section.hero.header-contact.is-medium
+        section.hero.is-medium.header-contact
+            img(src="~images/contact.jpg")
             .hero-body
-                img(src="~images/contact.jpg" v-parallax="0.2")
                 .container.has-text-centered
-                    h3.title.is-1.is-text-white <strong>ติดต่อเรา</strong>
-                    h4.subtitle.is-5.is-text-white เปิดบริการ วันจันทร์ - เสาร์ เวลา 8.00 น. ถึง 17.00 น. 
+                    h3.title.is-1.is-text-white <strong>{{$t("msg.contact_title")}}</strong>
+                    h4.subtitle.is-5.is-text-white {{$t("msg.contact_subtitle")}}
         section.content-contact-main
             .hero.container
                 .card
@@ -25,7 +25,7 @@
                                     .column.is-narrow.content
                                         i.fa.fa-map-marker.fa-lg
                                     .column.content
-                                        p 18/1 หมู่ 11 ตำบลหนองอ้อ อำเภอบ้านโป่ง จังหวัดราชบุรี 70110 
+                                        p {{$t("msg.address")}}
                                 .columns
                                     .column.is-narrow.content
                                         i.fa.fa-phone.fa-lg
@@ -50,7 +50,6 @@
 </template>
 
 <script>
-
 let uluru = {
     lat: 13.793172219614723,
     lng: 99.9267553165555
@@ -76,18 +75,10 @@ export default {
     overflow: hidden;
     img {
         width: 100%;
+        height: 100%;
         object-fit: cover;
         position: absolute;
-        left: 0px;
-        top: -200px;
-        @media screen and (max-width: 768px) {
-            top:-100px;
-        }
     }
-}
-
-.content-contact-header {
-    background-image: url("~images/contact.jpg");
 }
 
 .content-contact-main {

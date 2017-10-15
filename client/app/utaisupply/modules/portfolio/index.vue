@@ -1,11 +1,11 @@
 <template lang="pug">
 div 
     section.hero.is-medium.header-portfolio
+        img(src="~images/portfolio.jpg")
         .hero-body
-            img(src="~images/portfolio.jpg" v-parallax="0.2")
             .container.has-text-centered
-                h3.title.is-size-1.is-text-white <strong>ผลงาน</strong>
-                h4.subtitle.is-size-5.is-text-white รังสรรค์ผลิตภัณฑ์ด้วย ♥
+                h3.title.is-size-1.is-text-white <strong>{{$t("msg.portfolio_title")}}</strong>
+                h4.subtitle.is-size-5.is-text-white {{$t("msg.portfolio_subtitle")}}
         
     section.hero
         .hero-body
@@ -14,7 +14,7 @@ div
                     .column.is-4
                         .field.has-addons
                             .control
-                                a.button.is-static.is-text-grey-dark Category
+                                a.button.is-static.is-text-grey-dark {{$t("msg.service_title")}}
                             .control.is-expanded
                                 .select.is-fullwidth
                                     select(v-model="categorySelected" @input="loadPortfolio(0)")
@@ -23,13 +23,13 @@ div
                     .column.is-8
                         .field.has-addons
                             .control.is-expanded.has-icons-right
-                                input.input(type="text" placeholder="Find an porfolio" v-model="keyword")
+                                input.input(type="text" v-bind:placeholder="$t('msg.find_an_portfolio')" v-model="keyword")
                                 span.icon.is-small.is-right(v-if="isLoading")
                                     i.fa.fa-circle-o-notch.fa-spin
                             .control
-                                a.button.is-primary Search
+                                a.button.is-primary {{$t("msg.search")}}
                    
-                p.has-text-centered(v-if="portfolios.length === 0") No portfolios found 
+                p.has-text-centered(v-if="portfolios.length === 0") {{$t("msg.no_portfolio_found")}} 
                 .columns.is-multiline
                     .column.is-4(v-for="(portfolio,index) in portfolios")
                         .card.j-grow
@@ -39,9 +39,9 @@ div
                             .card-content
                                 .media
                                     .media-content
-                                        p.title.is-4 {{portfolio.translations[0].title}}
+                                        p.title.is-4 {{portfolio.translations.find(obj => obj.language === $i18n.locale).title}}
                                 .content 
-                                    p.detail {{portfolio.translations[0].detail}}
+                                    p.detail {{portfolio.translations.find(obj => obj.language === $i18n.locale).detail}}
                                     .tags
                                         span.tag.is-primary {{portfolio.category.translations[0].name}} 
                 nav.pagination(role="navigation" aria-label="pagination")
@@ -114,13 +114,9 @@ export default {
     overflow: hidden;
     img {
         width: 100%;
+        height: 100%;
         object-fit: cover;
         position: absolute;
-        left: 0px;
-        top: -200px;
-        @media screen and (max-width: 768px) {
-            top:-100px;
-        }
         filter: brightness(0.5);
     }
 }

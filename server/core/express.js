@@ -63,8 +63,8 @@ function initMiddleware(app) {
       })
     );
     // Setting up static folder
-    app.use(express["static"](path.join(serverFolder, "public")));
   }
+  app.use(express["static"](path.join(serverFolder, "public")));
   app.use(express["static"](path.join(serverFolder, "public/images")));
   app.use(express["static"](path.join(dataFolder)));
 

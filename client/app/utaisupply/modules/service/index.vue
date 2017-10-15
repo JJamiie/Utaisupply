@@ -1,29 +1,29 @@
 <template lang="pug">
     div
         section.hero.is-medium.header-service
+            img(src="~images/service.jpg")
             .hero-body
-                img(src="~images/service.jpg" v-parallax="0.2")
                 .container.has-text-centered
-                    h3.title.is-size-1.is-text-white <strong>บริการ</strong>
-                    h4.subtitle.is-size-5.is-text-white ด้วยความรวดเร็วและความใส่ใจ
-        section#tab-menu
+                    h3.title.is-text-white <strong>{{$t("msg.services_title")}}</strong>
+                    h4.subtitle.is-size-5.is-text-white {{$t("msg.services_subtitle")}}
+        section.tab-menu
             .tabs.is-fullwidth
                 ul
                     li
                         a.tab-scroll(data-title="laser-cutting" v-scroll-to="'#laser-cutting'")
-                            span.is-size-6 ตัดเลเซอร์
+                            span.is-size-6 {{$t("msg.laser_cutting")}}
                     li
                         a.tab-scroll(data-title="plasma-cutting" v-scroll-to="'#plasma-cutting'")
-                            span.is-size-6 ตัดพลาสม่า
+                            span.is-size-6 {{$t("msg.plasma_cutting")}}
                     li
                         a.tab-scroll(data-title="metal-cutting" v-scroll-to="'#metal-cutting'")
-                            span.is-size-6 ตัดเหล็ก
+                            span.is-size-6 {{$t("msg.metal_cutting")}}
                     li
                         a.tab-scroll(data-title="fold" v-scroll-to="'#fold'")
-                            span.is-size-6 พับ
+                            span.is-size-6 {{$t("msg.fold")}}
                     li
                         a.tab-scroll(data-title="bend" v-scroll-to="'#bend'")
-                            span.is-size-6 ม้วน
+                            span.is-size-6 {{$t("msg.bend")}}
         section.hero.content-service-main
             .hero-body
                 .container
@@ -34,9 +34,8 @@
                             .hero.is-fullheight
                                 .hero-body
                                     .container.has-text-centered-mobile
-                                        h3.title.is-size-1.is-size-2-mobile <strong>ตัดเลเซอร์</strong>
-                                        h4.subtitle.is-size-5.is-size-6-mobile สามารถตัดเหล็ก 1-8 มิลลิเมตร  </br>และตัดสเตนเลส 0.5-6 มิลลิเมตร 
-                        .column.is-1.is-hidden-mobile
+                                        h3.title.is-size-2 <strong>{{$t("msg.laser_cutting")}}</strong>
+                                        h4.subtitle.is-size-5.is-size-6-mobile {{$t("msg.laser_cutting_subtitle")}}
                     .columns#plasma-cutting
                         .column.is-1.is-hidden-mobile
                         .column.is-narrow.is-hidden-tablet
@@ -45,8 +44,8 @@
                             .hero.is-fullheight
                                 .hero-body
                                     .container.has-text-centered-mobile
-                                        h3.title.is-size-1.is-size-2-mobile <strong>ตัดพลาสม่า</strong>
-                                        h4.subtitle.is-size-5.is-size-6-mobile   สามารถตัดเหล็ก 1-26 มิลลิเมตร </br>และตัด  สเตนเลส 0.5-16 มิลลิเมตร
+                                        h3.title.is-size-2 <strong>{{$t("msg.plasma_cutting")}}</strong>
+                                        h4.subtitle.is-size-5.is-size-6-mobile {{$t("msg.plasma_cutting_subtitle")}}
                         .column.is-narrow.is-hidden-mobile
                             img(src="~images/plasma.jpg" atl="Plasma cutting")
                     .columns#metal-cutting
@@ -56,8 +55,8 @@
                             .hero.is-fullheight
                                 .hero-body
                                     .container.has-text-centered-mobile
-                                        h3.title.is-size-1.is-size-2-mobile <strong>ตัดเหล็ก</strong>
-                                        h4.subtitle.is-size-5.is-size-6-mobile สามารถตัดเหล็กความหนาสูงสุด 6 มิลลิเมตร </br>และตัด สเตนเลส 3 มิลลิเมตร </br>  ความยาวไม่เกิน 6 เมตร 
+                                        h3.title.is-size-2 <strong>{{$t("msg.metal_cutting")}}</strong>
+                                        h4.subtitle.is-size-5.is-size-6-mobile {{$t("msg.metal_cutting_subtitle")}}
                         .column.is-1.is-hidden-mobile
                     .columns#fold
                         .column.is-1.is-hidden-mobile
@@ -67,8 +66,8 @@
                             .hero.is-fullheight
                                 .hero-body
                                     .container.has-text-centered-mobile
-                                        h3.title.is-size-1.is-size-2-mobile <strong>พับ</strong>
-                                        h4.subtitle.is-size-5.is-size-6-mobile พับเหล็กความหนาสูงสุด 8 มิลลิเมตร </br> และพับสเตนเลสความหนาสูงสุด 4 มิลลิเมตร </br>ความยาวไม่เกิน 6 เมตร
+                                        h3.title.is-size-2 <strong>{{$t("msg.fold")}}</strong>
+                                        h4.subtitle.is-size-5.is-size-6-mobile {{$t("msg.fold_subtitle")}}
                         .column.is-narrow.is-hidden-mobile
                             img(src="~images/folding.jpg" atl="Folding")
                     .columns#bend
@@ -78,8 +77,8 @@
                             .hero.is-fullheight
                                 .hero-body
                                     .container.has-text-centered-mobile
-                                        h3.title.is-size-1.is-size-2-mobile <strong>ม้วน</strong>
-                                        h4.subtitle.is-size-5.is-size-6-mobile ม้วนเหล็กความหนาสูงสุด 3 มม.  </br>ความยาวไม่เกิน 3 เมตร 
+                                        h3.title.is-size-2 <strong>{{$t("msg.bend")}}</strong>
+                                        h4.subtitle.is-size-5.is-size-6-mobile {{$t("msg.bend_subtitle")}}
                         .column.is-1.is-hidden-mobile  
         page-footer
 </template>
@@ -87,31 +86,27 @@
 <script>
 export default {
     mounted: function() {
-        
+
     }
 }
 </script>
 
 <style lang="scss" scoped>
-#tab-menu {
-    width: 100%;
-    z-index: 999;
-    background-color: white;
-}
-
 .header-service {
     position: relative;
     overflow: hidden;
     img {
         width: 100%;
+        height: 100%;
         object-fit: cover;
         position: absolute;
-        left: 0px;
-        top: -150px;
-        @media screen and (max-width: 768px) {
-            top:-100px;
-        }
     }
+}
+
+.tab-menu {
+    width: 100%;
+    z-index: 999;
+    background-color: white;
 }
 
 .content-service-main {
@@ -137,6 +132,9 @@ export default {
                     }
                     min-height: 360px !important;
                 }
+            }
+            .subtitle{
+                white-space:pre-wrap;
             }
         }
     }

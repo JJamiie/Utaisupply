@@ -10,11 +10,11 @@ nav.navbar.nav-top.is-blue
                 span.is-white
         #navMenu.navbar-menu.is-blue(v-bind:class="{ 'is-active' : active }")
             .navbar-end
-                router-link(tag="a" , to="/",@click.native="active = false").nav-item.is-hoverable.is-text-white หน้าหลัก
-                router-link(tag="a" , to="/product",@click.native="active = false").nav-item.is-hoverable.is-text-white สินค้า
-                router-link(tag="a" , to="/service",@click.native="active = false").nav-item.is-hoverable.is-text-white บริการ
-                router-link(tag="a" , to="/portfolio",@click.native="active = false").nav-item.is-hoverable.is-text-white ผลงาน
-                router-link(tag="a" , to="/contact",@click.native="active = false").nav-item.is-hoverable.is-text-white ติดต่อเรา
+                router-link(tag="a" , to="/",@click.native="active = false").nav-item.is-hoverable.is-text-white {{$t("msg.home")}}
+                router-link(tag="a" , to="/product",@click.native="active = false").nav-item.is-hoverable.is-text-white {{$t("msg.products_title")}}
+                router-link(tag="a" , to="/service",@click.native="active = false").nav-item.is-hoverable.is-text-white {{$t("msg.services_title")}}
+                router-link(tag="a" , to="/portfolio",@click.native="active = false").nav-item.is-hoverable.is-text-white {{$t("msg.portfolio_title")}}
+                router-link(tag="a" , to="/contact",@click.native="active = false").nav-item.is-hoverable.is-text-white {{$t("msg.contact_title")}}
             .navbar-item.has-dropdown.is-hoverable
                 .navbar-link.is-blue
                     img.flag(v-bind:src="getPathImage(languages[current].abbr)")

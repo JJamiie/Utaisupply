@@ -8,15 +8,21 @@ import Service from "../modules/service";
 import Portfolio from "../modules/portfolio";
 import Contact from "../modules/contact";
 
-
 Vue.use(VueRouter);
 
-export default new VueRouter({
-	routes: [
-		{ path: "/", component: Home },
-		{ path: "/product", component: Product },
-		{ path: "/service", component: Service },
-		{ path: "/portfolio", component: Portfolio },	
-		{ path: "/contact", component: Contact }
-	]
+let vuerouter = new VueRouter({
+  routes: [
+    { path: "/", component: Home },
+    { path: "/product", component: Product },
+    { path: "/service", component: Service },
+    { path: "/portfolio", component: Portfolio },
+    { path: "/contact", component: Contact }
+  ]
 });
+
+vuerouter.beforeEach(function(to, from, next) {
+  window.scrollTo(0, 0);
+  next();
+});
+
+export default vuerouter;

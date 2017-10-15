@@ -4,12 +4,12 @@
         .container
             .columns
                 .column.is-offset-2-desktop
-                    .title.is-text-white.is-uppercase ติดต่อเรา
-                    p.is-text-white 18/1 หมู่ 11 ตำบลหนองอ้อ อำเภอบ้านโป่ง จังหวัดราชบุรี 70110 
-                    p.is-text-white โทร: (66) 32 353 887
-                    p.is-text-white แฟกซ์: (66) 32 353 359
+                    .title.is-text-white.is-uppercase {{$t("msg.contact_title")}}
+                    p.is-text-white {{$t("msg.address")}}
+                    p.is-text-white {{$t("msg.tel")}} : (66) 32 353 887
+                    p.is-text-white {{$t("msg.fax")}} : (66) 32 353 359
                 .column
-                    .title.is-text-white.is-uppercase โซเชียลมีเดีย
+                    .title.is-text-white.is-uppercase {{$t("msg.social_media")}}
                     .columns.is-mobile.is-2
                         .column.is-narrow
                             a(href="https://www.facebook.com/utaisupply/" target='_blank')

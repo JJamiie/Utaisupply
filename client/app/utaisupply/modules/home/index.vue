@@ -10,21 +10,25 @@ div
         slide
           img(src="~images/section4.jpg")
       .container.has-text-centered
-        h3.title.is-size-1.is-text-white.noselect <strong>อุทัยซัพพลาย</strong>
-        h4.subtitle.is-text-white.noselect.is-font-light รับผลิต และจำหน่ายชิ้นงานโลหะทุกชนิด
+        h3.title.is-font-bold.is-size-1.is-size-2-mobile.is-text-white.noselect <strong>{{$t("msg.utaisupply_title")}}</strong>
+        h4.subtitle.is-size-5.is-size-6-mobile.is-text-white.noselect.is-font-light {{$t("msg.utaisupply_subtitle")}}
   section.content-home-main.is-white
     .hero.container
       .hero-body
-        h3.title.is-2.has-text-centered.noselect เกี่ยวกับเรา
+        h3.title.is-2.has-text-centered.noselect {{$t("msg.about_us")}}
         .line
-        p &emsp; จากประสบการณ์กว่า 20 ปี ที่ได้ทำงานประกอบรถบัส รถบรรทุก กันชนและอะไหล่รถยนต์ เราจึงมีช่างที่มีประสบการณ์และ เครื่องมือหลากหลาย (เครื่องตัดเลเซอร์และพลาสม่า เครื่องตัดพับ เครื่องปั้มชิ้นงานฯ) ที่จะผลิดชิ้นงานให้กับลูกค้า อีกทั้งจำหน่ายเหล็ก และแสตนเลส - ท่อและแผ่นหจก. อุทัยซัพพลายบ้านโป่ง เป็นร้านจำหน่ายและติดตั้งอุปกรณ์ตกแต่งรถพิคอัพ และรถตู้ ครบวงจร โดยเฉพาะชุดตกแต่งภายนอก ที่มีการออกแบบทันสมัย แข็งแกร่ง ทนทาน มาตรฐานส่งออก สร้างชื่อเสียงเป็นที่รู้จักในเขตอำเภอบ้านโป่ง ภายในร้าน มีอุปกรณ์ตกแต่งรถพิคอัพและรถตู้ ให้เลือกมากมาย อาทิ กันชนหน้า/หลัง แรคหลังคา บันไดข้าง ที่ออกแบบได้อย่างสวยงาม มีความทนทานสูง จุดเด่นอยู่ที่รูปแบบสินค้า สวยงามไม่ซ้ำใคร ผลิตด้วยวัตถุดิบคุณภาพสูง มาตรฐานสินค
+        p &emsp; {{$t("msg.about_us_detail")}}
   section.content-home-footer
-    img(src="~images/section2.jpg" v-parallax="0.2")
+    img(src="~images/section2.jpg")
   page-footer
 </template>
 
 <script>
 import { Carousel, Slide } from 'vue-carousel';
+import Vue from 'vue';
+import VueParallaxJs from 'vue-parallax-js';
+Vue.use(VueParallaxJs);
+
 export default {
   components: {
     Carousel,
@@ -37,6 +41,9 @@ export default {
 <style lang="scss" scoped>
 .content-home-header {
   .hero-body {
+    .title {
+      letter-spacing: 5px;
+    }
     position: relative;
     .VueCarousel {
       position: absolute;
@@ -70,13 +77,12 @@ export default {
   @media screen and (min-width: 769px) {
     min-height: 500px;
   }
-  min-height: 300px;
+  min-height: 200px;
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
-    @media screen and (min-width: 769px) {
-      top: -200px;
-    }
     filter: brightness(0.9);
   }
 }

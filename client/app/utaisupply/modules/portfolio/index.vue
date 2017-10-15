@@ -7,14 +7,14 @@ div
                 h3.title.is-size-1.is-text-white <strong>{{$t("msg.portfolio_title")}}</strong>
                 h4.subtitle.is-size-5.is-text-white {{$t("msg.portfolio_subtitle")}}
         
-    section.hero
+    section.hero.content-portfolio
         .hero-body
             .container
                 .columns
                     .column.is-4
                         .field.has-addons
                             .control
-                                a.button.is-static.is-text-grey-dark {{$t("msg.service_title")}}
+                                a.button.is-static.is-text-grey-dark {{$t("msg.services_title")}}
                             .control.is-expanded
                                 .select.is-fullwidth
                                     select(v-model="categorySelected" @input="loadPortfolio(0)")
@@ -32,7 +32,7 @@ div
                 p.has-text-centered(v-if="portfolios.length === 0") {{$t("msg.no_portfolio_found")}} 
                 .columns.is-multiline
                     .column.is-4(v-for="(portfolio,index) in portfolios")
-                        .card.j-grow
+                        .card.j-grow(@click="showModal = true")
                             .card-image(v-if="portfolio.image.length > 0")
                                 figure.image.is-4by3
                                     img(:src="portfolio.image[0]" alt="portfolio")
@@ -44,7 +44,8 @@ div
                                     p.detail {{portfolio.translations.find(obj => obj.language === $i18n.locale).detail}}
                                     .tags
                                         span.tag.is-primary {{portfolio.category.translations[0].name}} 
-                nav.pagination(role="navigation" aria-label="pagination")
+                        ModalPortfolio(v-if="showModal" @close="showModal = false" v-bind:portfolio="portfolio")
+                nav.pagination.is-centered(role="navigation" aria-label="pagination")
                     ul.pagination-list
                         li(v-for="index in totalPage")
                             a.pagination-link(v-bind:class="isCurrentPage(index)" v-on:click="changePage(index)") {{index}}
@@ -53,18 +54,24 @@ div
 </template>
 
 <script>
+import ModalPortfolio from "./components/ModalPortfolio";
+
 const LIMIT = 9;
 export default {
     data: function() {
         return {
             keyword: "",
             isLoading: false,
+            showModal: false,
             currentPage: 1,
             totalPage: 0,
             portfolios: [],
             categories: [],
             categorySelected: "",
         }
+    },
+    components: {
+        ModalPortfolio
     },
     methods: {
         loadCategory: function() {
@@ -118,6 +125,16 @@ export default {
         object-fit: cover;
         position: absolute;
         filter: brightness(0.5);
+    }
+}
+
+.content-portfolio {
+    .detail {
+        white-space: pre-line;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
     }
 }
 </style>

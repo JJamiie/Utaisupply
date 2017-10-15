@@ -21,7 +21,7 @@ div
                     .field
                         label.label Image
                         input-file(v-for="(image,index) in images" v-bind:key="getUUID()" v-model="images[index]" v-bind:intialIsRemove="true" @remove="removeImage(index)" )
-                        .has-text-centered
+                        .has-text-centered.mar-bot-15
                             a.button(@click="addImage") 
                                 span.icon
                                     i.fa.fa-plus

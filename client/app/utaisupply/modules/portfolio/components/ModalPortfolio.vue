@@ -49,6 +49,7 @@ export default {
         position: relative;
         width: 100%;
         padding: 20px;
+        min-height: 100%;
         @media screen and (min-width: 769px) {
             padding: 40px;
             height: 100%;

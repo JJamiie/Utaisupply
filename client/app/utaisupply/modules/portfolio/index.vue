@@ -18,8 +18,8 @@ div
                             .control.is-expanded
                                 .select.is-fullwidth
                                     select(v-model="categorySelected" @input="loadPortfolio(0)")
-                                        option(v-bind:value="''") All
-                                        option(v-for="category in categories"  v-bind:value="category._id") {{category.translations[0].name}}
+                                        option(v-bind:value="''") {{$t("msg.all")}}
+                                        option(v-for="category in categories"  v-bind:value="category._id") {{category.translations.find(obj => obj.language === $i18n.locale).name}} 
                     .column.is-8
                         .field.has-addons
                             .control.is-expanded.has-icons-right
@@ -43,7 +43,7 @@ div
                                 .content 
                                     p.detail {{portfolio.translations.find(obj => obj.language === $i18n.locale).detail}}
                                     .tags
-                                        span.tag.is-primary {{portfolio.category.translations[0].name}} 
+                                        span.tag.is-primary {{portfolio.category.translations.find(obj => obj.language === $i18n.locale).name}}
                         ModalPortfolio(v-if="showModal" @close="showModal = false" v-bind:portfolio="portfolio")
                 nav.pagination.is-centered(role="navigation" aria-label="pagination")
                     ul.pagination-list

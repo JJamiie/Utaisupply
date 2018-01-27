@@ -34,7 +34,7 @@
                         .content 
                             p.detail {{portfolio.translations[0].detail}}
                             .tags
-                                span.tag.is-primary {{portfolio.category.translations.find(obj => obj.language === $i18n.locale).name}} 
+                                span.tag.is-primary {{portfolio.category.translations[0].name}} 
                             
         nav.pagination(role="navigation" aria-label="pagination")
             ul.pagination-list

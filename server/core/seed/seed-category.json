@@ -4,6 +4,10 @@
       {
         "language": "th",
         "name": "ตัดเลเซอร์"
+      },
+      {
+        "language": "en",
+        "name": "Laser cutting"
       }
     ],
     "type": 0
@@ -13,6 +17,10 @@
       {
         "language": "th",
         "name": "ตัดพลาสม่า"
+      },
+      {
+        "language": "en",
+        "name": "Plasma cutting"
       }
     ],
     "type": 1
@@ -22,6 +30,10 @@
       {
         "language": "th",
         "name": "ตัดเหล็ก"
+      },
+      {
+        "language": "en",
+        "name": "Metal cutting"
       }
     ],
     "type": 2
@@ -31,6 +43,10 @@
       {
         "language": "th",
         "name": "พับ"
+      },
+      {
+        "language": "en",
+        "name": "Fold"
       }
     ],
     "type": 3
@@ -40,6 +56,10 @@
       {
         "language": "th",
         "name": "ม้วน"
+      },
+      {
+        "language": "en",
+        "name": "Bend"
       }
     ],
     "type": 4

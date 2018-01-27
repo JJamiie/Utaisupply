@@ -1,7 +1,10 @@
 <template lang="pug">
 div
-  section.hero.is-large.content-home-header
+  section.hero.is-large.content-home-header.is-grey
     .hero-body
+      .pageloader.j-center
+        .double-bounce1
+        .double-bounce2
       carousel(v-bind:autoplay="true" v-bind:loop="true" v-bind:perPage="1" v-bind:navigationEnabled="true" v-bind:paginationEnabled="false" v-bind:autoplayHoverPause="true")
         slide
           img(src="~images/section1.jpg")
